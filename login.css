@@ -1,0 +1,89 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.641);
+}
+
+.right {
+    background-color: rgba(127, 74, 74, 0.451);
+    height: 100vh;
+    width: 50vw;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.p {
+    margin-left: 13px;
+    margin-top: 5px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    width: 50%;
+}
+
+label {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.right h1 {
+    margin-bottom: 0px;
+    font-size: 39px;
+}
+
+
+input {
+    width: 100%;
+    height: 24px;
+    background: #00000000;
+    /* border: 0px; */
+    outline: 0px;
+    padding: 7px;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+
+}
+
+.forget {
+    text-align: end;
+    margin-top: 0px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn {
+    border-radius: 10px;
+    height: 37px;
+    background-color: rgba(90, 86, 86, 0.749);
+    color: white;
+    border: 0px;
+    cursor: pointer;
+}
+p a{
+    margin-left: 6px;
+    text-decoration: none;
+    color: rgb(22, 17, 25);
+    font-weight: 600;
+}
+/* .left {
+    background-color: rgba(0, 0, 255, 0.459);
+    height: 100vh;
+    width: 50vw;
+} */
