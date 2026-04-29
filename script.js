@@ -20,7 +20,9 @@ loginbtn.addEventListener("click", (e) => {
     let obj = {
         name: name,
         password: password,
-        email: email
+        email: email,
+        profit: 0,
+        own: 0
     }
     let items = JSON.parse(localStorage.getItem("email"));
 
@@ -32,7 +34,7 @@ loginbtn.addEventListener("click", (e) => {
         window.location.href = "index.html"
     }
     else if (items.filter((e) => e["email"] == email).length > 0) {
-        // already account logic
+      
 
         toast({
             message: "User Already present"
