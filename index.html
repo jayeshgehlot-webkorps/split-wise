@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spit-wise</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <h4>Split-Wise</h4>
+        <div class="name">
+            <button class="logout">Logout</button>
+            <p>Welcome,</p>
+        </div>
+    </nav>
+    <section class="container">
+        <div>
+            <div class="card1">
+                <p>Get</p>
+                <h2>5000</h2>
+            </div>
+            <div class="card2">
+                <p>Pay</p>
+                <h2>300</h2>
+            </div>
+        </div>
+
+        <div class="lists">
+            <button class="create"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M11 11.0001L11 2.0005L13 2.00049L13 11.0001L22.0001 10.9999L22.0002 12.9999L13 13.0001L13.0001 22L11.0001 22L11.0001 13.0001L2.00004 13.0003L2 11.0003L11 11.0001Z">
+                    </path>
+                </svg> Create Group</button>
+            <section class="groups">
+                <div class="group">
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+    <div class="modal hidden">
+        <div class="modal-content ">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z">
+                </path>
+            </svg>
+            <h3>Create Group</h3>
+
+            <input type="text" id="groupName" placeholder="Enter group name" />
+            <input type="number" placeholder="Enter Amount" class="amount" class="amount">
+
+            <h4>Select Members</h4>
+            <div class="members">
+            </div>
+
+            <div class="modal-buttons">
+                <button class="addGroup">Create</button>
+                <button class="closeModal">Cancel</button>
+            </div>
+        </div>
+        <div class="modal-content-edit">
+            <div class="modal-header">
+                <h3>Edit Group</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="see">
+                    <path
+                        d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z">
+                    </path>
+                </svg>
+            </div>
+
+            <div class="form-group">
+                <label>Group Name</label>
+                <input type="text" id="editGroupName">
+            </div>
+
+            <div class="form-group">
+                <label>Amount</label>
+                <input type="number" id="editAmount">
+            </div>
+
+            <div class="members-section">
+                <h4>Edit Members</h4>
+                <div class="editMembers"></div>
+            </div>
+
+            <div class="modal-buttons">
+                <button class="updateGroup">Update</button>
+                <button class="closeModal">Cancel</button>
+            </div>
+        </div>
+        <div class="modal-content-see ">
+
+            <div class="modal-header">
+                <h3>Group Details</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z">
+                    </path>
+                </svg>
+            </div>
+
+            <p><strong>Name:</strong> <span id="seeName"></span></p>
+            <p><strong>Amount:</strong> ₹<span id="seeAmount"></span></p>
+
+            <div class="member-name">
+                <h4>Members:</h4>
+                <div class="seeMembers"></div>
+            </div>
+            <div class="crt">
+                <h4> Created By:</h4> <span id="createBy"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
