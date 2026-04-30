@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: "Inter";
 }
 
 .container {
@@ -42,9 +43,13 @@ body {
     width: 50%;
 }
 
+form p{
+    font-size: small;
+}
+
 label {
     font-size: 22px;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 .right h1 {
@@ -71,9 +76,11 @@ input {
     margin-top: 0px;
     font-size: 14px;
     cursor: pointer;
+    
 }
 
 .btn {
+    margin-top: 10px;
     border-radius: 10px;
     height: 37px;
     background-color: rgba(90, 86, 86, 0.749);
@@ -92,3 +99,18 @@ p a{
     height: 100vh;
     width: 50vw;
 } */
+ .eye{
+    position: relative;
+    display:flex;
+    gap: 10px;
+ }
+ .open,.close{
+    position: absolute;
+    height: 14px;
+    right: 0px;
+    top: 10px;
+    cursor: pointer;
+ }
+ .open{
+    display: none;
+ }
