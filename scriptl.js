@@ -11,6 +11,17 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 })
 
+document.querySelector(".close").addEventListener("click", () => {
+    document.querySelector(".close").style.display = "none";
+    document.querySelector("#password").type = "text";
+    document.querySelector(".open").style.display = "block";
+})
+document.querySelector(".open ").addEventListener("click", () => {
+    document.querySelector(".open").style.display = "none";
+    document.querySelector("#password").type = "password";
+    document.querySelector(".close").style.display = "block";
+})
+
 const loginbtn = document.querySelector(".btn");
 loginbtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -27,9 +38,10 @@ loginbtn.addEventListener("click", (e) => {
         if (user) {
             localStorage.setItem("isLoggedin", true);
             localStorage.setItem("currentUser", JSON.stringify(user));
-            
-            window.location.href = "index.html";
+
+            window.location.href = "index.html?login=true";
         } else {
+            // console.log(data)
             alert("Invalid email or password");
         }
 

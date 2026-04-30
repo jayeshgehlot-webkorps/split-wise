@@ -31,7 +31,7 @@ loginbtn.addEventListener("click", (e) => {
         ar.push(obj);
         localStorage.setItem("email", JSON.stringify(ar));
         localStorage.setItem("isLoggedin", true);
-        window.location.href = "index.html"
+        window.location.href = "index.html?login=true"
     }
     else if (items.filter((e) => e["email"] == email).length > 0) {
       
