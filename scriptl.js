@@ -1,12 +1,12 @@
-// import { toast } from "./node_modules/mytoastfy/dist/index.js";
+import { toast } from "https://cdn.jsdelivr.net/npm/mytoastfy/dist/index.js";
 window.addEventListener('DOMContentLoaded', () => {
     console.log("done")
     const url = new URLSearchParams(window.location.search);
     if (url.get("logout") == "true") {
-        // toast({
-        //     message: "logout",
-        //     type: "error"
-        // })
+        toast({
+            message: "logout",
+            type: "error"
+        })
         window.history.replaceState({}, document.title, "Login.html");
     }
 })
@@ -41,11 +41,16 @@ loginbtn.addEventListener("click", (e) => {
 
             window.location.href = "index.html?login=true";
         } else {
-            // console.log(data)
-            alert("Invalid email or password");
+            taost({
+                message:"Invalid Email , Password",
+                type:"error"    
+            })
         }
 
     } else {
-        alert("No users found, please register first");
+        taost({
+            message:"No users found, please register first",
+            type:"error"
+        })
     }
 });
