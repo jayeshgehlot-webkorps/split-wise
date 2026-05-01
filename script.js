@@ -43,10 +43,10 @@ registerBtn.addEventListener("click", (e) => {
     localStorage.setItem("isLoggedin", true);
     localStorage.setItem("currentUser", JSON.stringify(newUser));
 
-    toast({
-        message: "Registration Successful",
-        type: "success"
-    });
+    // toast({
+    //     message: "Registration Successful",
+    //     type: "success"
+    // });
 
     setTimeout(() => {
         window.location.href = "index.html?login=true";
