@@ -31,15 +31,10 @@ let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 document.querySelector(".name p").innerText += " "+currentUser.name;
 let users = JSON.parse(localStorage.getItem("email"));
 
-
 localStorage.setItem("currentUser", JSON.stringify(users.find((e) => e.name == currentUser.name)));
 currentUser = JSON.parse(localStorage.getItem("currentUser"));
 document.querySelector(".card1 h2").innerText = currentUser.profit;
 document.querySelector(".card2 h2").innerText = currentUser.own;
-
-
-
-
 
 let hidden = document.querySelector(".hidden");
 let create = document.querySelector(".create");
@@ -49,16 +44,10 @@ let modal = document.querySelector(".modal");
 let closeModal = document.querySelector(".closeModal");
 let addGroup = document.querySelector(".addGroup");
 let groupsContainer = document.querySelector(".groups");
-
-
 let createContent = document.querySelector(".modal-content");
 let editContent = document.querySelector(".modal-content-edit");
-
 let gnamelocal = localStorage.getItem("groupName");
 let seeContent = document.querySelector(".modal-content-see");
-
-
-
 
 function displaygroups() {
     let groupData = localStorage.getItem("groupName");
@@ -118,8 +107,6 @@ closeModal.addEventListener("click", () => {
     modal.classList.add("hidden");
     hidden.style.display = "none";
 });
-
-
 crosses.forEach(cross => {
     cross.addEventListener("click", () => {
         modal.classList.add("hidden");
@@ -198,8 +185,6 @@ addGroup.addEventListener("click", () => {
     window.location.reload();
     displaygroups();
 });
-
-
 
 function edit() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="edit">
