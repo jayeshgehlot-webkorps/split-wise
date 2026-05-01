@@ -1,50 +1,54 @@
-
 // import { toast } from './node_modules/mytoastfy/dist/index.js';
 
-const loginbtn = document.querySelector(".btn");
-loginbtn.addEventListener("click", (e) => {
+const registerBtn = document.querySelector(".btn");
+
+registerBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
-    const name = document.querySelector("#name").value;
 
-    if (email.trim() == '' || name.trim() == '' || password.trim() == '') {
+    const email = document.querySelector("#email").value.trim();
+    const password = document.querySelector("#password").value.trim();
+    const name = document.querySelector("#name").value.trim();
+
+    if (!email || !password || !name) {
         // toast({
-        //     message: "fields are empty",
+        //     message: "All fields are required",
         //     type: "error"
-
-        // })
+        // });
         return;
     }
 
-    let obj = {
+    let users = JSON.parse(localStorage.getItem("email")) || [];
+
+    let exists = users.some(user => user.email === email);
+
+    if (exists) {
+        // toast({
+        //     message: "User already exists",
+        //     type: "error"
+        // });
+        return;
+    }
+
+    let newUser = {
         name: name,
-        password: password,
         email: email,
+        password: password,
         profit: 0,
         own: 0
-    }
-    let items = JSON.parse(localStorage.getItem("email"));
+    };
 
-    if (items == null) {
-        let ar = [];
-        ar.push(obj);
-        localStorage.setItem("email", JSON.stringify(ar));
-        localStorage.setItem("isLoggedin", true);
-        window.location.href = "index.html?login=true"
-    }
-    else if (items.filter((e) => e["email"] == email).length > 0) {
-      
+    users.push(newUser);
+    localStorage.setItem("email", JSON.stringify(users));
 
-        // toast({
-        //     message: "User Already present"
-        // })
+    localStorage.setItem("isLoggedin", true);
+    localStorage.setItem("currentUser", JSON.stringify(newUser));
 
-    }
-    else {
-        items = [...items, obj];
-        localStorage.setItem("email", JSON.stringify(items));
-        localStorage.setItem("isLoggedin", true);
-        window.location.href = "index.html"
-    }
-})
+    toast({
+        message: "Registration Successful",
+        type: "success"
+    });
+
+    setTimeout(() => {
+        window.location.href = "index.html?login=true";
+    }, 500);
+});
