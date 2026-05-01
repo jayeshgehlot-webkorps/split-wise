@@ -1,5 +1,5 @@
 
-import { toast } from './node_modules/mytoastfy/dist/index.js';
+// import { toast } from './node_modules/mytoastfy/dist/index.js';
 
 const loginbtn = document.querySelector(".btn");
 loginbtn.addEventListener("click", (e) => {
@@ -9,11 +9,11 @@ loginbtn.addEventListener("click", (e) => {
     const name = document.querySelector("#name").value;
 
     if (email.trim() == '' || name.trim() == '' || password.trim() == '') {
-        toast({
-            message: "fields are empty",
-            type: "error"
+        // toast({
+        //     message: "fields are empty",
+        //     type: "error"
 
-        })
+        // })
         return;
     }
 
@@ -36,9 +36,9 @@ loginbtn.addEventListener("click", (e) => {
     else if (items.filter((e) => e["email"] == email).length > 0) {
       
 
-        toast({
-            message: "User Already present"
-        })
+        // toast({
+        //     message: "User Already present"
+        // })
 
     }
     else {
