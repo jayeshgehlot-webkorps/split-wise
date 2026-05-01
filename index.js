@@ -1,7 +1,6 @@
 import { toast } from "https://cdn.jsdelivr.net/npm/mytoastfy/dist/index.js";
 
 window.addEventListener('DOMContentLoaded', () => {
-    console.log("done")
     const url = new URLSearchParams(window.location.search);
     if (url.get("login") == "true") {
         toast({
@@ -14,7 +13,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 if (!localStorage.getItem("isLoggedin")) {
-    console.log("you can't access");
     window.location.href = "Login.html";
 }
 else {
@@ -31,7 +29,6 @@ document.querySelector(".modal").classList.add("hidden");
 document.querySelector(".hidden").style.display = "none";
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 document.querySelector(".name p").innerText += " "+currentUser.name;
-console.log(currentUser)
 let users = JSON.parse(localStorage.getItem("email"));
 
 
@@ -135,7 +132,6 @@ addGroup.addEventListener("click", () => {
     let selectedMembers = [];
 
     let amount = document.querySelector(".amount").value;
-    console.log(groupName);
 
     selectedMembers.push(currentUser.name);
     document.querySelectorAll(".members input:checked").forEach((el) => {
@@ -146,16 +142,13 @@ addGroup.addEventListener("click", () => {
 
     let totalPeople = selectedMembers.length;
     let share = amount / totalPeople;
-    console.log(amount, selectedMembers, share);
     if (users != null) {
         users.forEach((user) => {
             if (user.name === currentUser.name) {
                 user.profit += Math.round(share * (selectedMembers.length - 1));
-                console.log(user.profit);
             }
             else if (selectedMembers.includes(user.name)) {
                 user.own += Math.round(share);
-                console.log(user.name, user.own);
             }
         });
         localStorage.setItem("email", JSON.stringify(users));
@@ -182,7 +175,6 @@ addGroup.addEventListener("click", () => {
         localStorage.setItem("groupName", JSON.stringify(arr));
     }
 
-    console.log(JSON.parse(localStorage.getItem("groupName")));
 
 
     if (groupName === "") {
