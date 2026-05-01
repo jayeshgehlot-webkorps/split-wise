@@ -1,13 +1,13 @@
-// import { toast } from "./node_modules/mytoastfy/dist/index.js";
+import { toast } from "https://cdn.jsdelivr.net/npm/mytoastfy/dist/index.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log("done")
     const url = new URLSearchParams(window.location.search);
     if (url.get("login") == "true") {
-        // toast({
-        //     message: "login Successfully",
-        //     type: "success"
-        // })
+        toast({
+            message: "login Successfully",
+            type: "success"
+        })
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 })
