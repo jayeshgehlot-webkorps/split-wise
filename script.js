@@ -2,6 +2,17 @@ import { toast } from 'https://cdn.jsdelivr.net/npm/mytoastfy/dist/index.js';
 
 const registerBtn = document.querySelector(".btn");
 
+document.querySelector(".close").addEventListener("click", () => {
+    document.querySelector(".close").style.display = "none";
+    document.querySelector("#password").type = "text";
+    document.querySelector(".open").style.display = "block";
+})
+document.querySelector(".open ").addEventListener("click", () => {
+    document.querySelector(".open").style.display = "none";
+    document.querySelector("#password").type = "password";
+    document.querySelector(".close").style.display = "block";
+})
+
 registerBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
