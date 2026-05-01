@@ -1,6 +1,5 @@
 import { toast } from "https://cdn.jsdelivr.net/npm/mytoastfy/dist/index.js";
 window.addEventListener('DOMContentLoaded', () => {
-    console.log("done")
     const url = new URLSearchParams(window.location.search);
     if (url.get("logout") == "true") {
         toast({
