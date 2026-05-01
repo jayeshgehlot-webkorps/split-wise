@@ -1,12 +1,12 @@
-import { toast } from "./node_modules/mytoastfy/dist/index.js";
+// import { toast } from "./node_modules/mytoastfy/dist/index.js";
 window.addEventListener('DOMContentLoaded', () => {
     console.log("done")
     const url = new URLSearchParams(window.location.search);
     if (url.get("logout") == "true") {
-        toast({
-            message: "logout",
-            type: "error"
-        })
+        // toast({
+        //     message: "logout",
+        //     type: "error"
+        // })
         window.history.replaceState({}, document.title, "Login.html");
     }
 })
