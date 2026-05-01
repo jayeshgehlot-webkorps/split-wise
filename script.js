@@ -1,4 +1,4 @@
-// import { toast } from './node_modules/mytoastfy/dist/index.js';
+import { toast } from 'https://cdn.jsdelivr.net/npm/mytoastfy/dist/index.js';
 
 const registerBtn = document.querySelector(".btn");
 
@@ -10,10 +10,10 @@ registerBtn.addEventListener("click", (e) => {
     const name = document.querySelector("#name").value.trim();
 
     if (!email || !password || !name) {
-        // toast({
-        //     message: "All fields are required",
-        //     type: "error"
-        // });
+        toast({
+            message: "All fields are required",
+            type: "error"
+        });
         return;
     }
 
@@ -22,10 +22,10 @@ registerBtn.addEventListener("click", (e) => {
     let exists = users.some(user => user.email === email);
 
     if (exists) {
-        // toast({
-        //     message: "User already exists",
-        //     type: "error"
-        // });
+        toast({
+            message: "User already exists",
+            type: "error"
+        });
         return;
     }
 
@@ -43,10 +43,10 @@ registerBtn.addEventListener("click", (e) => {
     localStorage.setItem("isLoggedin", true);
     localStorage.setItem("currentUser", JSON.stringify(newUser));
 
-    // toast({
-    //     message: "Registration Successful",
-    //     type: "success"
-    // });
+    toast({
+        message: "Registration Successful",
+        type: "success"
+    });
 
     setTimeout(() => {
         window.location.href = "index.html?login=true";
